@@ -10,7 +10,7 @@ Official PyTorch implementation of the paper entitled 'THISNet: Tooth Instance S
 
 2. conda env installation
 ```
-conda env create -f environment.yml -n thisnet
+conda env create -f environment.yaml -n thisnet
 ```
 # Usage
 You can train and test the model by running the following commands:
