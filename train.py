@@ -10,15 +10,19 @@ from utils.instanceloss import Cal_Loss
 from utils.read_gpu_free import sleep_until_gpu_free
 from utils.creat_loggings import creat_loggings
 
+TRAINING_DATA_PATH = '/raid/lipengcheng/Data/mesh_data_221204/all_data/TRAINT/'
+VALIDATION_DATA_PATH = '/raid/lipengcheng/Data/mesh_data_221204/all_data/VALT/'
+
+
 def get_args():
     parser = argparse.ArgumentParser(description='Training')
     parser.add_argument('--save_path', default='./experiments/', type=str,
                         help='path to the experiments saved')
     parser.add_argument('--experiment_name', default='THISNet', type=str,
                         help='the experiment model name')
-    parser.add_argument('--train_path', default='/raid/lipengcheng/Data/mesh_data_221204/all_data/TRAINT/', type=str,
+    parser.add_argument('--train_path', default=TRAINING_DATA_PATH, type=str,
                         help='path to the training data')
-    parser.add_argument('--val_path', default='/raid/lipengcheng/Data/mesh_data_221204/all_data/VALT/', type=str,
+    parser.add_argument('--val_path', default=VALIDATION_DATA_PATH, type=str,
                         help='path to the validation data')
     parser.add_argument('--batch_size', default=8, type=int, help='batch size in all gpu')
     parser.add_argument('--input_channel', default=24, type=int, help='input channels of the model')
